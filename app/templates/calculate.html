@@ -1,0 +1,30 @@
+{% extends "_base.html" %}
+{% block content %}
+   <h1>Kalkulator śladu węglowego</h1>
+   <p>Czy wiesz ile CO<sub>2</sub> produkuje Twoje urządzenie?</p>
+   <form action="" method="POST">
+       Power consumption [W]: <input type="number" name="power" placeholder="100" class="form-control"> 
+       <br>
+       Device working time [min] per day: <input type="number" name="time" placeholder="30" class="form-control">
+       <br>
+       <label class="form-label">Current country: </label>
+       <select class="form-select" name="country">
+           <option disabled>Please select country from list:</option>
+           <option value="PL" selected>PL</option>
+           <option value="UK">UK</option>
+           <option value="DE">DE</option>
+           <option value="FR">FR</option>
+           <option value="ES">ES</option>
+           <option value="UK">UK</option>
+           <option value="IN">IN</option>
+           <option value="CN">CN</option>
+           <option value="US">US</option>
+       </select>       
+       <br>
+       <button class="btn btn-primary" type="submit">Calculate!</button>
+    </form>
+    <hr />
+       {%if footprint %}
+        <p>Your carbon footprint for this device: {{footprint}} kg</p>
+       {%endif%}
+{% endblock %}

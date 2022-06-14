@@ -1,0 +1,29 @@
+{% extends "_base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Weather in your country and city!</h1>
+    <form action="" method="POST">
+        <label class="form-label" for="">Country name</label>
+        <select name="country" class="form-select">
+            <option disabled>Choose your country</option>
+            <option value="UK">UK</option>
+            <option value="PL" selected>PL</option>
+            <option value="DE">DE</option>
+        </select>
+        <br> <br>
+        <label class="form-label" for="">City name</label>
+        <input class="form-control" type="text" name="city">
+        <br>
+        <input class="btn btn-primary" type="submit" value="Search for weather">
+    </form>
+    <div>
+        <br>
+        <h3>Current temperature is {{ temperature }} °C</h3>
+        <br>
+        Min. temp <b>{{ tempMin }} °C </b>
+        <br>
+        Max. temp <b>{{ tempMax }} °C</b>
+    </div>
+</div>
+
+{% endblock %}

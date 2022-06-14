@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+{% block content %}
+     <h1>Hello, <b>{{ name }}</b> 👋!</h1>
+     <hr>
+     <table class="table">
+        <thead>
+          <tr class="table-info">
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in products %}
+          <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.description}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <section class="bg-light p-5">
+        <h3>Ozone emission POLAND</h3>
+        <canvas id="average-example"></canvas>
+      </section>
+{% endblock %}

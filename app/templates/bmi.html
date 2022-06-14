@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+{% block content %}
+<form action="" method="POST">
+    Height: <input type="number" name="height" class="form-control">
+    <br> <br>
+    Weight: <input type="number" name="weight" class="form-control">
+    <br> <br>
+    <button class="btn btn-primary" type="submit">Calculate BMI!</button>
+</form>
+<hr />
+    <table border="1" border-collapse="collapse">
+        <tr>
+            <th>Niedowaga</th>
+            <th>Normalna waga</th>
+            <th>Nadwaga</th>
+            <th>Otylosc</th>
+        </tr>
+        <tr>
+            <td>< 18.5</td>
+            <td>18,5-24,9</td>
+            <td>25-29,9</td>
+            <td>>= 30</td>
+        </tr>
+    </table>
+    {%if bmi %}
+        <h3>Your BMI is {{ bmi }}</h3>
+    {%endif%}
+{% endblock %}

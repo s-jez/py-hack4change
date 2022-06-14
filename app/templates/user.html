@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+
+{% block content %}
+  <h1>Hello {{ user }} 💃</h1>
+  <form action="/user" method="post" name="userform">
+    <p>Name:</p>
+    <p><input type="text" name="username" class="form-control" /></p>
+    <p>Age:</p>
+    <input type="number" name="age" class="form-control">
+    <p><input class="btn btn-primary" type="submit" value="submit" /></p>
+  </form>
+  {% if user %}
+    <div class="alert alert-success" role="alert">Hello! <b>{{ user }}</b></div>
+    <p>Your age is <b>{{ age }}</b></p>
+  {% endif %}
+  {% for mesg in get_flashed_messages() %}
+  <div class="text-danger float-right">
+    {{ mesg }}
+  </div>
+  {% if feedback %}
+{% endif %}
+
+  {% endfor %}
+{% endblock %}
