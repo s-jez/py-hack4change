@@ -105,5 +105,3 @@ def weather():
             return render_template("weather.html", temperature=weatherDict['main']['temp'], tempMin=weatherDict['main']['temp_min'], tempMax=weatherDict['main']['temp_max'])
     else:
         return render_template("weather.html")
-if __name__ == "__main__":
-  app.run()
